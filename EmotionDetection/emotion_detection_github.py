@@ -13,11 +13,10 @@ def emotion_detector(input_text):
     #use a try catch block to catch any errors
     try:
         # Call the appropriate Emotion Detection library function
-        detected_emotion = requests.post(url, json=data, headers=headers, timeout=180)
+        detected_emotion = requests.post(url, json=data, headers=Headers, timeout=180)
         data_of_response = response.json()
         response = input_json['text']
         return response
     # If the try block does not work then it will throw an error
     except requests.exceptions.HTTPError as e:
         return f"An error occurred: {e}"
-
